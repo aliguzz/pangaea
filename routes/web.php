@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('subscribe/{topic}', [\App\Http\Controllers\SubscriptionController::class, "subscribeToTopic"]);
+Route::post('publish/{topic}', [\App\Http\Controllers\SubscriptionController::class, "publishSubscription"]);
